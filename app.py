@@ -1,25 +1,17 @@
 import streamlit as st
 
-st.header('st.checkbox')
+st.title('Customizing the theme of Streamlit apps')
 
-st.write ('What would you like to order?')
+st.write('Contents of the `.streamlit/config.toml` file of this app')
 
-icecream = st.checkbox('Ice cream')
-coffee = st.checkbox('Coffee')
-cola = st.checkbox('Cola')
+st.code("""
+[theme]
+primaryColor="#F39C12"
+backgroundColor="#2E86C1"
+secondaryBackgroundColor="#AED6F1"
+textColor="#FFFFFF"
+font="monospace"
+""")
 
-if icecream:
-     st.write("Great! Here's some more 🍦")
-
-if coffee: 
-     st.write("Okay, here's some coffee ☕")
-
-if cola:
-     st.write("Here you go 🥤")
-
-
-print(type(icecream)) # <class 'bool'>
-x = 1
-print(x)
-x += 1
-print(x)
+number = st.sidebar.slider('Select a number:', 0, 10, 5)
+st.write('Selected number from slider widget is:', number)
